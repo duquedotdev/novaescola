@@ -177,7 +177,7 @@ Para integração contínua utilizei o Buddy Works com uma pipeline enxuta. Caso
   
 ## :no_entry_sign: Gerenciamento de Erros
 
-No caso de erros, implementei o Sentry para monitorar os erros que podemos obter. Caso necessário compartilho o acesso.
+No caso de erros, implementei o [Sentry](https://sentry.io) para monitorar os erros que podemos obter. Caso necessário compartilho o acesso.
 
 ---
 
