@@ -144,8 +144,15 @@ Adicionalmente criei uma validação de tentativa de exclusão de um cliente ine
       "error": "Cliente não encontrado!"
     }
 
+## :negative_squared_cross_mark: Validação
 
-## :white_check_mark: Teste
+Incluí adicionalmente o Celebrate + Joi para validar os dados antes que eles possam acessar o banco de dados. Durante o cadastro do usuário, os campos nome, e-mail e data de nascimento são obrigatórios. Além disso:
+
+    nome: não pode estar vazio;
+    email: formato de um email (abc@abc.com);
+    dataDeNascimento: formato de data (1993-07-08);
+
+## :white_check_mark: TDD
 
 O projeto contempla 8 testes que atingem 100% dos métodos. Os mesmos foram criados com Jest +  Faker + FactoryGirl.
 
