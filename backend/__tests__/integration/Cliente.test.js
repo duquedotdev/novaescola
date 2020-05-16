@@ -24,7 +24,7 @@ describe('Cliente', () => {
   });
 
   // Testa indexação de clientes
-  it('Se a rota de indexação de cliente responde', async () => {
+  it('Se a rota de indexação de cliente responde e se existe cadastros listados', async () => {
     const cliente = await factory.attrs('Cliente');
     await request(app).post('/cliente').send(cliente);
     const response = await request(app).get('/cliente');
@@ -69,8 +69,8 @@ describe('Cliente', () => {
     expect(response.dataValues.nome).toBe(dadosAtualizacao.nome);
   });
 
-  // Testa a exclusão de um cadastro
-  it('Testa a exclusão de um cadastro', async () => {
+  // Testa a exclusão de um cadastro existente
+  it('Testa a exclusão de um cadastro existente', async () => {
     const cliente = await factory.attrs('Cliente');
     await request(app).post('/cliente').send(cliente);
     const { nome } = await cliente;
@@ -82,8 +82,8 @@ describe('Cliente', () => {
     expect(response.status).toBe(200);
   });
 
-  // Testa a exclusão de um cadastro
-  it('Testa a exclusão de um cadastro', async () => {
+  // Testa a exclusão de um cadastro inexistente
+  it('Testa a exclusão de um cadastro inexistente ou já excluído', async () => {
     const cliente = await factory.attrs('Cliente');
     await request(app).post('/cliente').send(cliente);
     const { nome } = await cliente;
